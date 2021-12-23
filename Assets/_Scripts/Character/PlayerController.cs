@@ -104,8 +104,8 @@ public class PlayerController : MonoBehaviour
 
         if (isGrounded && velocity.y < 0)
         {
-            walkSpeed = 4;
-            runSpeed = 8;
+            
+            
             velocity.y = 0;
             jumpCounter = 0;
             playerMoving = true;
@@ -129,13 +129,14 @@ public class PlayerController : MonoBehaviour
         jumpPressed = Input.GetButtonDown("Jump");
         if (jumpPressed)
         {
+            walkSpeed = runSpeed = 0;
             jumpTimer = Time.time;
             _animator.SetTrigger("isJumping");
         }
         
         if ( jumpCounter<1 && (jumpPressed || (jumpTimer > 0 && Time.time<jumpTimer+jumpGracePeriod)))
         {
-            walkSpeed = runSpeed = 1;
+            
             StartCoroutine(jumpWaitToAlignAnimation());
             jumpCounter++;
             jumpTimer = -1;
@@ -219,8 +220,17 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator jumpWaitToAlignAnimation()
     {
+        
         yield return new WaitForSeconds(0.5f);
+        walkSpeed = runSpeed = 2;
         velocity.y += Mathf.Sqrt((jumpHeight * -1 * gravity));
+        Invoke("setSpeedToIdeal", 1.0f);
+    }
+
+    private void setSpeedToIdeal()
+    {
+        walkSpeed = 4;
+        runSpeed = 8;
     }
 
     // public void TakeDamage()
