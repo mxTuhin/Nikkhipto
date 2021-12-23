@@ -55,6 +55,8 @@
      <Compile Include="Assets\_Scripts\GameManager.cs" />
      <Compile Include="Assets\_Scripts\Character\PlayerController.cs" />
      <Compile Include="Assets\_Scripts\WaypointTrafficSystem\Waypoint.cs" />
+     <Compile Include="Assets\_Scripts\Pedestrian\PedestrianNavigationController.cs" />
+     <Compile Include="Assets\_Scripts\Pedestrian\WaypointNavigator.cs" />
      <None Include="Assets\Dark City 2\Assets\Source\Shaders\Standard Color Mask.shader" />
      <None Include="Assets\Dark City 2\Assets\Source\Shaders\Police Lights.shader" />
      <None Include="Assets\Dark City 2\Assets\Source\Shaders\Fog Shader.shader" />
