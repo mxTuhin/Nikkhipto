@@ -104,6 +104,8 @@ public class PlayerController : MonoBehaviour
 
         if (isGrounded && velocity.y < 0)
         {
+            walkSpeed = 4;
+            runSpeed = 8;
             velocity.y = 0;
             jumpCounter = 0;
             playerMoving = true;
@@ -128,15 +130,13 @@ public class PlayerController : MonoBehaviour
         if (jumpPressed)
         {
             jumpTimer = Time.time;
-            _animator.SetBool("isJumping", true);
+            _animator.SetTrigger("isJumping");
         }
-        else
-        {
-            _animator.SetBool("isJumping", false);
-        }
+        
         if ( jumpCounter<1 && (jumpPressed || (jumpTimer > 0 && Time.time<jumpTimer+jumpGracePeriod)))
         {
-            velocity.y += Mathf.Sqrt((jumpHeight * -1 * gravity));
+            walkSpeed = runSpeed = 1;
+            StartCoroutine(jumpWaitToAlignAnimation());
             jumpCounter++;
             jumpTimer = -1;
         }
@@ -215,6 +215,12 @@ public class PlayerController : MonoBehaviour
     public void animateCharacterAttack(float attack)
     {
         _animator.SetFloat("attack", attack);
+    }
+
+    private IEnumerator jumpWaitToAlignAnimation()
+    {
+        yield return new WaitForSeconds(0.5f);
+        velocity.y += Mathf.Sqrt((jumpHeight * -1 * gravity));
     }
 
     // public void TakeDamage()
