@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    private float gravity = -20f;
+    private float gravity = -40f;
 
     private CharacterController _characterController;
 
