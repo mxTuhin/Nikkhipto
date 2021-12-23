@@ -54,6 +54,31 @@
   <ItemGroup>
      <Compile Include="Assets\_Scripts\GameManager.cs" />
      <Compile Include="Assets\_Scripts\Character\PlayerController.cs" />
+     <None Include="Assets\Dark City 2\Assets\Source\Shaders\Standard Color Mask.shader" />
+     <None Include="Assets\Dark City 2\Assets\Source\Shaders\Police Lights.shader" />
+     <None Include="Assets\Dark City 2\Assets\Source\Shaders\Fog Shader.shader" />
+     <None Include="Assets\Dark City 2\Assets\Source\Shaders\Rain_alpha.shader" />
+     <None Include="Assets\Dark City 2\Assets\Source\Shaders\Movie.shader" />
+     <None Include="Assets\Dark City 2\Assets\Source\Shaders\Billboards1.shader" />
+     <None Include="Assets\Dark City 2\Assets\Source\Shaders\Standard Panner.shader" />
+     <None Include="Assets\Dark City 2\Assets\Source\Shaders\Billboard_Movie.shader" />
+     <None Include="Assets\Dark City 2\Assets\Source\Shaders\New Amplify Shader.shader" />
+     <None Include="Assets\Dark City 2\Assets\Source\Shaders\Rain_Paralax.shader" />
+     <None Include="Assets\Dark City 2\Demo\!README Post-Pro_Info_demo.txt" />
+     <None Include="Assets\Dark City 2\Assets\Source\Shaders\Rain.shader" />
+     <None Include="Assets\Dark City 2\Assets\Source\Shaders\Street_Dirt_triplanar2.shader" />
+     <None Include="Assets\Dark City 2\InfoMK4.txt" />
+     <None Include="Assets\Dark City 2\Assets\Source\Shaders\Billboards_tilex4.shader" />
+     <None Include="Assets\Dark City 2\Assets\Source\Shaders\Second UV AO.shader" />
+     <None Include="Assets\Dark City 2\Assets\Source\Shaders\Windows.shader" />
+     <None Include="Assets\Dark City 2\Assets\Source\Shaders\Neon Panner.shader" />
+     <None Include="Assets\Dark City 2\Assets\Source\Shaders\StreetLights3.shader" />
+     <None Include="Assets\Dark City 2\Assets\Source\Shaders\Street_Rain_triplanar1.shader" />
+     <None Include="Assets\Dark City 2\Assets\Source\Shaders\StreetLights.shader" />
+     <None Include="Assets\Dark City 2\Assets\Source\Shaders\MK4_laser.shader" />
+     <None Include="Assets\Dark City 2\Assets\Source\Shaders\MK4_Holo1.shader" />
+     <None Include="Assets\Dark City 2\Assets\Source\Shaders\StreetLights2 Add.shader" />
+     <None Include="Assets\Dark City 2\Assets\Source\Shaders\StreetLights2.shader" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
