@@ -248,6 +248,7 @@ public class PlayerController : MonoBehaviour
 
         if (inAction)
         {
+            
             if (isMoving && movementSpeed == runSpeed)
             {
                 rifleAnimateCharacter(5.0f, 5.0f);
@@ -260,10 +261,23 @@ public class PlayerController : MonoBehaviour
             {
                 rifleAnimateCharacter(0.0f, 1.0f);
             }
+
+            
+            if(isShooting)
+            {
+                rifleAnimateCharacter(1.0f, 1.0f);
+            }
+            if (isShooting && isMoving)
+            {
+                rifleAnimateCharacter(5.0f, 5.0f);
+
+            }
         }
 
 
     }
+
+    
     
     private void FixedUpdate()
     {
