@@ -54,7 +54,7 @@ public class PedestrianNavigationController : MonoBehaviour
 
     public void SetDestination(Vector3 destination)
     {
-        print("Destination Set");
+        // print("Destination Set");
         this.destination = destination;
         reachedDestination = false;
         walk = true;

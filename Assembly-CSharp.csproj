@@ -57,7 +57,22 @@
      <Compile Include="Assets\_Scripts\Pedestrian\PedestrianNavigationController.cs" />
      <Compile Include="Assets\_Scripts\GameManager.cs" />
      <Compile Include="Assets\_Scripts\WaypointTrafficSystem\Waypoint.cs" />
+     <Compile Include="Assets\_Scripts\Combat\Rifle.cs" />
+     <Compile Include="Assets\_Scripts\Combat\Health.cs" />
+     <Compile Include="Assets\_Scripts\Combat\MouseLooker.cs" />
+     <Compile Include="Assets\_Scripts\Combat\Shooter.cs" />
+     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\OneshotParticleSystemsManager.cs" />
+     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\ParticleManager.cs" />
+     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\CameraShake.cs" />
+     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\DemoManager.cs" />
+     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\LoopingParticleSystemsManager.cs" />
+     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\AnimatedLight.cs" />
+     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\MouseFollow.cs" />
+     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\FPSTest.cs" />
+     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\FPSDisplay.cs" />
+     <Compile Include="Assets\Prefabs\BulletTrail\LineFade.cs" />
      <None Include="Assets\Dark City 2\Assets\Source\Shaders\Standard Color Mask.shader" />
+     <None Include="Assets\Mirza Beig\_DOCS\README - Inferno VFX.txt" />
      <None Include="Assets\Dark City 2\Assets\Source\Shaders\Police Lights.shader" />
      <None Include="Assets\Dark City 2\Assets\Source\Shaders\Fog Shader.shader" />
      <None Include="Assets\Dark City 2\Assets\Source\Shaders\Rain_alpha.shader" />
@@ -306,6 +321,9 @@
  </Reference>
  <Reference Include="Newtonsoft.Json">
  <HintPath>E:/Unity/Nikkhipto/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Burst.Unsafe">
+ <HintPath>E:/Unity/Nikkhipto/Library/PackageCache/com.unity.burst@1.3.4/Unity.Burst.Unsafe.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.14f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -696,6 +714,24 @@
  </Reference>
  <Reference Include="Unity.SysrootPackage.Editor">
  <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.SysrootPackage.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Mathematics">
+ <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Burst">
+ <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Mathematics.Editor">
+ <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Animation.Rigging">
+ <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Animation.Rigging.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Animation.Rigging.Editor">
+ <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Animation.Rigging.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Burst.Editor">
+ <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

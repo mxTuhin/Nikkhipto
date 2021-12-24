@@ -306,6 +306,9 @@
  <Reference Include="unityplastic">
  <HintPath>E:/Unity/Nikkhipto/Library/PackageCache/com.unity.collab-proxy@1.5.7/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.Burst.Unsafe">
+ <HintPath>E:/Unity/Nikkhipto/Library/PackageCache/com.unity.burst@1.3.4/Unity.Burst.Unsafe.dll</HintPath>
+ </Reference>
  <Reference Include="nunit.framework">
  <HintPath>E:/Unity/Nikkhipto/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
@@ -707,6 +710,24 @@
  </Reference>
  <Reference Include="Unity.SysrootPackage.Editor">
  <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.SysrootPackage.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Mathematics">
+ <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Burst">
+ <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Mathematics.Editor">
+ <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Animation.Rigging">
+ <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Animation.Rigging.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Animation.Rigging.Editor">
+ <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Animation.Rigging.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Burst.Editor">
+ <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

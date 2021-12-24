@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -52,8 +53,17 @@ public class PlayerController : MonoBehaviour
     public bool isMoving;
 
     public bool inAction=false;
+
+    public bool isShooting;
+
+    public GameObject crosshair;
     // public Image lifeFront;
     public bool canBeAttacked = true;
+
+    public Rig rig = null;
+    private float rigPointSpeed = 1f;
+    public GameObject rigLooker;
+    private int targetValue;
 
     // public GameObject gameOver;
     
@@ -69,8 +79,8 @@ public class PlayerController : MonoBehaviour
         _animator = gameObject.GetComponentInChildren<Animator>();
         rifleInHand.SetActive(false);
         
-        // Cursor.lockState = CursorLockMode.Locked;
-        // Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
     }
 
@@ -152,11 +162,16 @@ public class PlayerController : MonoBehaviour
         
         
         Vector3 direction = new Vector3(horizontalMovement, 0f, verticalMovement).normalized;
+        
+        float targetAngle = Mathf.Atan2(direction.x, direction.z)*Mathf.Rad2Deg + cameraTransform.eulerAngles.y;
+        float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothingTime);
+        transform.rotation = Quaternion.Euler(0f, angle, 0f);
+        
         if (direction.magnitude >= 0.1f)
         {
-            float targetAngle = Mathf.Atan2(direction.x, direction.z)*Mathf.Rad2Deg + cameraTransform.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothingTime);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            // float targetAngle = Mathf.Atan2(direction.x, direction.z)*Mathf.Rad2Deg + cameraTransform.eulerAngles.y;
+            // float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothingTime);
+            // transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             
@@ -207,11 +222,14 @@ public class PlayerController : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
+            targetValue = targetValue == 0 ? 1 : 0;
             if (rifleInHand.activeSelf)
             {
                 rifleInHand.SetActive(false);
                 rifleAnimateCharacter(0.0f, -1.0f);
                 inAction = false;
+                crosshair.SetActive(false);
+                
 
             }
             else
@@ -220,10 +238,13 @@ public class PlayerController : MonoBehaviour
                 inAction = true;
                 _animator.SetTrigger("inAction");
                 rifleAnimateCharacter(0.0f, 1.0f);
+                crosshair.SetActive(true);
+                
 
             }
             
         }
+        rig.weight = Mathf.MoveTowards(rig.weight, targetValue, rigPointSpeed * Time.deltaTime);
 
         if (inAction)
         {
