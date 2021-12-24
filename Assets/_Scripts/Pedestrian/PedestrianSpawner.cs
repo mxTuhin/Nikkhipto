@@ -10,7 +10,7 @@ public class PedestrianSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pedestrianToSpawn = 1;
+        pedestrianToSpawn = 20;
         StartCoroutine(Spawn());
     }
 

@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/PrimaryScene.unity
     guid: 681148ffea0d81b4baa164e33f4ebf7a
+  - enabled: 1
+    path: Assets/_Scenes/Mission1Animate.unity
+    guid: 1496a2e5a62bc4241ae67d9eb28d292b
   m_configObjects: {}

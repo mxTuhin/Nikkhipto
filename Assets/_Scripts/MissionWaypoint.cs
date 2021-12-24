@@ -10,6 +10,7 @@ using Image = UnityEngine.UI.Image;
 public class MissionWaypoint : MonoBehaviour
 {
     public Transform[] missionTransforms;
+    public static MissionWaypoint instance;
 
     public Image waypointMarker;
 
@@ -21,7 +22,8 @@ public class MissionWaypoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        instance = this;
+
     }
 
     // Update is called once per frame
@@ -35,7 +37,7 @@ public class MissionWaypoint : MonoBehaviour
 
         
         
-        Vector2 pos = Camera.main.WorldToScreenPoint(missionTransforms[missionNumber].position+offset);
+        Vector2 pos = Camera.main.WorldToScreenPoint(missionTransforms[StaticVars.missionSelector].position+offset);
         if (Vector3.Dot(missionTransforms[missionNumber].position - transform.position, transform.forward) < 0)
         {
             if (pos.x < Screen.width / 2)
@@ -51,9 +53,7 @@ public class MissionWaypoint : MonoBehaviour
         pos.y = Mathf.Clamp(pos.y, minY, maxY);
 
         waypointMarker.transform.position = pos;
-        int calculatedDistance =(int)Vector3.Distance(missionTransforms[missionNumber].position, transform.position);
-        print("Distance: "+calculatedDistance);
-        distance.text = calculatedDistance+"";
+        distance.text = (int)Vector3.Distance(missionTransforms[StaticVars.missionSelector].position, transform.position)+"";
 
     }
 }
