@@ -9,3 +9,10 @@
 - Create Requiredd Tags and Layers to dynamically control and proceed throguh the gameplay
 - Import Environment Asset (Dark City 2) - Unity Asset Store
 - Create Map
+
+## Day 2 (24.12.2021)
+- Add MiniMap
+- Combat System (Shooting Mechanics) - Use One Rifle to Minify Complexity for now
+- Implement Health
+- Initiate Mission Entry Protocol
+- Spawn Traffic (Pre Defined Spawn Locations/Random axis)

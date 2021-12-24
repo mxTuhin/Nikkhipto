@@ -43,9 +43,15 @@ public class PlayerController : MonoBehaviour
     float turnSmoothVelocity;
     private bool runTrigger;
 
+    public GameObject rifleInHand;
+
     public static PlayerController instance;
 
     public float health = 100;
+
+    public bool isMoving;
+
+    public bool inAction=false;
     // public Image lifeFront;
     public bool canBeAttacked = true;
 
@@ -61,6 +67,7 @@ public class PlayerController : MonoBehaviour
         movementSpeed = walkSpeed;
         _characterController = GetComponent<CharacterController>();
         _animator = gameObject.GetComponentInChildren<Animator>();
+        rifleInHand.SetActive(false);
         
         // Cursor.lockState = CursorLockMode.Locked;
         // Cursor.visible = false;
@@ -72,6 +79,7 @@ public class PlayerController : MonoBehaviour
     {
         if(GameManager.instance.gameOver) return;
         if(GameManager.instance.pauseMenuState) return;
+        
 
         if(Input.GetKey(KeyCode.Escape))
         {
@@ -160,6 +168,7 @@ public class PlayerController : MonoBehaviour
         
         if ((horizontalMovement > 0.05f || horizontalMovement<-0.05) || (verticalMovement > 0.05 || verticalMovement < -0.05))
         {
+            isMoving = true;
             _animator.SetBool("isMoving", true);
             if (runTrigger)
             {
@@ -187,12 +196,49 @@ public class PlayerController : MonoBehaviour
         // }
         else
         {
+            isMoving = false;
             _animator.SetBool("isMoving", false);
         }
 
         if (animMove)
         {
             _animator.SetBool("isMoving", true);
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            if (rifleInHand.activeSelf)
+            {
+                rifleInHand.SetActive(false);
+                rifleAnimateCharacter(0.0f, -1.0f);
+                inAction = false;
+
+            }
+            else
+            {
+                rifleInHand.SetActive(true);
+                inAction = true;
+                _animator.SetTrigger("inAction");
+                rifleAnimateCharacter(0.0f, 1.0f);
+
+            }
+            
+        }
+
+        if (inAction)
+        {
+            if (isMoving && movementSpeed == runSpeed)
+            {
+                rifleAnimateCharacter(5.0f, 5.0f);
+            }
+            else if (isMoving && movementSpeed == walkSpeed)
+            {
+                rifleAnimateCharacter(0.0f, 2.0f);
+            }
+            else
+            {
+                rifleAnimateCharacter(0.0f, 1.0f);
+            }
         }
 
 
@@ -212,6 +258,12 @@ public class PlayerController : MonoBehaviour
         _animator.SetFloat("offset1", offset1, 0.05f, Time.deltaTime);
         _animator.SetFloat("offset2", offset2, 0.05f, Time.deltaTime);
     }
+
+    public void rifleAnimateCharacter(float rifleOffset1, float rifleOffset2)
+    {
+        _animator.SetFloat("rifleOffset1", rifleOffset1);
+        _animator.SetFloat("rifleOffset2", rifleOffset2);
+    }
     
     public void animateCharacterAttack(float attack)
     {
@@ -229,6 +281,10 @@ public class PlayerController : MonoBehaviour
 
     private void setSpeedToIdeal()
     {
+        if (inAction)
+        {
+            _animator.SetTrigger("inAction");
+        }
         walkSpeed = 4;
         runSpeed = 8;
     }
