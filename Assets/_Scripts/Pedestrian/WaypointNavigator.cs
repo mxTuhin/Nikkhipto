@@ -7,9 +7,12 @@ public class WaypointNavigator : MonoBehaviour
     private PedestrianNavigationController controller;
 
     public Waypoint currentWaypoint;
+
+    private int direction;
     // Start is called before the first frame update
     void Start()
     {
+        direction = Mathf.RoundToInt(Random.Range(0f, 1f));
         controller = GetComponent<PedestrianNavigationController>();
         controller.SetDestination(currentWaypoint.GetPosition());
     }
@@ -19,7 +22,14 @@ public class WaypointNavigator : MonoBehaviour
     {
         if (controller.reachedDestination)
         {
-            currentWaypoint = currentWaypoint.nextWaypoint;
+            if (direction == 0)
+            {
+                currentWaypoint = currentWaypoint.nextWaypoint;
+            }else if (direction == 1)
+            {
+                currentWaypoint = currentWaypoint.previousWaypoint;
+            }
+            
             controller.SetDestination(currentWaypoint.GetPosition());
         }
         

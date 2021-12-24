@@ -12,7 +12,7 @@ public class PedestrianNavigationController : MonoBehaviour
 
     public float rotationSpeed=120;
 
-    public float movementSpeed=4;
+    private float movementSpeed;
 
     public bool walk=false;
 
@@ -21,6 +21,7 @@ public class PedestrianNavigationController : MonoBehaviour
     void Start()
     {
         _animator = GetComponentInChildren<Animator>();
+        movementSpeed = Random.Range(2, 4);
 
     }
 
