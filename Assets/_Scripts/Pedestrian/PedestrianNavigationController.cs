@@ -21,7 +21,7 @@ public class PedestrianNavigationController : MonoBehaviour
     void Start()
     {
         _animator = GetComponentInChildren<Animator>();
-        movementSpeed = Random.Range(2, 4);
+        movementSpeed = Random.Range(1, 2);
 
     }
 

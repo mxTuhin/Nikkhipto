@@ -15,6 +15,7 @@ public class Shooter : MonoBehaviour
     private float graceTime;
 
     public GameObject bloodSplash;
+    public GameObject bulletPrefab;
     void Update()
     {
 
@@ -43,9 +44,12 @@ public class Shooter : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(center);
         StartCoroutine(waitBeforeFlash());
         
-        Debug.DrawRay(ray.origin, ray.direction*200, Color.red, 2);
+        Debug.DrawRay(ray.origin, ray.direction, Color.red,5);
         if (Physics.Raycast(ray, out hit))
         {
+            // GameObject t_hole = Instantiate(bulletPrefab, hit.point+hit.normal*0.001f, Quaternion.identity) as GameObject;
+            // t_hole.transform.LookAt(hit.point+hit.normal);
+            // Destroy(t_hole, 2f);
             print(hit.transform.gameObject.name);
             PlayerController.instance.isShooting = true;
             var takeHit =hit.transform.GetComponent<Health>();

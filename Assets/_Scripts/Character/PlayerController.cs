@@ -73,6 +73,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         instance = this;
         movementSpeed = walkSpeed;
         _characterController = GetComponent<CharacterController>();
