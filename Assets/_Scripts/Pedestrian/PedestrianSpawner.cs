@@ -6,10 +6,11 @@ public class PedestrianSpawner : MonoBehaviour
 {
     public GameObject pedestrianPrefab;
 
-    public int pedestrianToSpawn;
+    private int pedestrianToSpawn;
     // Start is called before the first frame update
     void Start()
     {
+        pedestrianToSpawn = 1;
         StartCoroutine(Spawn());
     }
 

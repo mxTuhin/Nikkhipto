@@ -65,6 +65,8 @@ public class PlayerController : MonoBehaviour
     public GameObject rigLooker;
     private int targetValue;
 
+    public GameObject largeMap;
+
     // public GameObject gameOver;
     
     
@@ -96,6 +98,11 @@ public class PlayerController : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            largeMap.SetActive(!largeMap.activeSelf);
         }
 
         if (Input.GetKey(KeyCode.LeftShift))
