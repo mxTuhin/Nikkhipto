@@ -15,6 +15,10 @@ public class MissionControllers : MonoBehaviour
     private PlayerController playerController;
 
     private Police policeController;
+
+    public GameObject playerGun;
+
+    public GameObject policeGun;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +27,8 @@ public class MissionControllers : MonoBehaviour
         playerAnimator = player.GetComponentInChildren<Animator>();
         policeAnimator = police.GetComponentInChildren<Animator>();
         StartCoroutine(playerTurnOffAnimation());
-        StartCoroutine(policeTurnOffAnimation());
+        // StartCoroutine(policeTurnOffAnimation());
+        StartCoroutine(swapGun());
     }
 
     // Update is called once per frame
@@ -44,5 +49,14 @@ public class MissionControllers : MonoBehaviour
     {
         yield return new WaitForSeconds(7.0f);
         policeAnimator.SetTrigger("isIdle");
+    }
+
+    IEnumerator swapGun()
+    {
+        StaticVars.showWaypointMarker = true;
+        yield return new WaitForSeconds(58f);
+        policeGun.SetActive(false);
+        playerGun.SetActive(true);
+        
     }
 }

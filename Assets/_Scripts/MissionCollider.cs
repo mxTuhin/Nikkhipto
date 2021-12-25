@@ -11,6 +11,8 @@ public class MissionCollider : MonoBehaviour
     public bool mission3;
     public bool mission4;
     public bool mission5;
+    
+    
 
     private void OnTriggerEnter(Collider collider)
     {
@@ -22,7 +24,11 @@ public class MissionCollider : MonoBehaviour
             {
                 print("Mission 01");
                 StaticVars.missionSelector = 0;
-                SceneManager.LoadScene("Mission1Animate");
+                StaticVars.isMissionOneTriggered = true;
+                GameManager.instance.sceneChangeBackground.SetActive(true);
+                StartCoroutine(changeScene());
+                
+
             }
             else if (mission2)
             {
@@ -46,5 +52,11 @@ public class MissionCollider : MonoBehaviour
             }
             
         }
+    }
+
+    IEnumerator changeScene()
+    {
+        yield return new WaitForSeconds(1.0f);
+        SceneManager.LoadScene("Mission1Animate");
     }
 }

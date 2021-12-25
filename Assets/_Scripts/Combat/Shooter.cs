@@ -59,6 +59,7 @@ public class Shooter : MonoBehaviour
                 var policeObject = hit.transform.GetComponent<Police>();
                 var playerObject = hit.transform.GetComponent<PlayerController>();
                 var pedsObject = hit.transform.GetComponent<PedestrianNavigationController>();
+                
                 if (takeHit != null)
                 {
                     
@@ -75,6 +76,11 @@ public class Shooter : MonoBehaviour
                     {
                         print("Peds");
                         takeHit.TakeDamage(damage, "Peds");
+                    }
+
+                    if (hit.transform.gameObject.name == "LeaderOne")
+                    {
+                        takeHit.TakeDamage(damage, "LeaderOne");
                     }
                 }
             }

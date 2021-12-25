@@ -23,12 +23,18 @@ public class MissionWaypoint : MonoBehaviour
     void Start()
     {
         instance = this;
+        if (StaticVars.showWaypointMarker)
+        {
+            waypointMarker.gameObject.SetActive(true);
+        }
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+        
         float minX = waypointMarker.GetPixelAdjustedRect().width / 2;
         float maxX = Screen.width - minX;
 
@@ -54,6 +60,11 @@ public class MissionWaypoint : MonoBehaviour
 
         waypointMarker.transform.position = pos;
         distance.text = (int)Vector3.Distance(missionTransforms[StaticVars.missionSelector].position, transform.position)+"";
+        
+        if((int)Vector3.Distance(missionTransforms[StaticVars.missionSelector].position, transform.position)<=10)
+        {
+            waypointMarker.gameObject.SetActive(false);
+        }
 
     }
 }

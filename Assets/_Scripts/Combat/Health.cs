@@ -25,7 +25,17 @@ public class Health : MonoBehaviour
         {
             _animtor.SetTrigger("isDead");
             isDeadTrigger = true;
-            Destroy(gameObject, 2f);
+            healthBar.size = new Vector2(0,0f);
+            if (hitObject.Equals("LeaderOne"))
+            {
+                Destroy(gameObject, 3f);
+                SelfObjectDestroyer.instance.destroyMissionOneComponents(30f);
+            }
+            else
+            {
+                Destroy(gameObject, 2f);
+            }
+            
             
         }
 
@@ -62,7 +72,23 @@ public class Health : MonoBehaviour
                 
                 
             }
+            
+            if (hitObject.Equals("LeaderOne"))
+            {
+                gameObject.GetComponent<AudioSource>().Stop();
+                if (!healthBar.gameObject.activeSelf)
+                {
+                    healthBar.gameObject.SetActive(true);
+                }
+                healthBar.size -= new Vector2(0,1.3f);
+                if (healthBar.size.y <= 1.3)
+                {
+                    healthBar.color=Color.red;
+                }
+            }
+            
         }
+        
 
     }
     
