@@ -52,40 +52,42 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\_Scripts\Character\PlayerController.cs" />
-     <Compile Include="Assets\_Scripts\Pedestrian\WaypointNavigator.cs" />
-     <Compile Include="Assets\_Scripts\Pedestrian\PedestrianNavigationController.cs" />
-     <Compile Include="Assets\_Scripts\GameManager.cs" />
-     <Compile Include="Assets\_Scripts\WaypointTrafficSystem\Waypoint.cs" />
+     <Compile Include="Assets\_Scripts\MissionCollider.cs" />
+     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RotateCamera.cs" />
+     <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
      <Compile Include="Assets\_Scripts\Combat\Health.cs" />
-     <Compile Include="Assets\_Scripts\Combat\MouseLooker.cs" />
-     <Compile Include="Assets\_Scripts\Combat\Shooter.cs" />
-     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\OneshotParticleSystemsManager.cs" />
+     <Compile Include="Assets\_Scripts\MissionControllers.cs" />
+     <Compile Include="Assets\_Scripts\Character\PlayerController.cs" />
      <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\ParticleManager.cs" />
-     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\CameraShake.cs" />
-     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\DemoManager.cs" />
+     <Compile Include="Assets\_Scripts\Police\Police.cs" />
+     <Compile Include="Assets\_Scripts\Pedestrian\WaypointNavigator.cs" />
+     <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_AutoRotate.cs" />
+     <Compile Include="Assets\Prefabs\BulletTrail\LineFade.cs" />
+     <Compile Include="Assets\_Scripts\Pedestrian\PedestrianNavigationController.cs" />
+     <Compile Include="Assets\_Scripts\StaticVars.cs" />
+     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
+     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\FPSDisplay.cs" />
+     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
+     <Compile Include="Assets\_Scripts\Pedestrian\PedestrianSpawner.cs" />
+     <Compile Include="Assets\_Scripts\MissionWaypoint.cs" />
      <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\LoopingParticleSystemsManager.cs" />
      <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\AnimatedLight.cs" />
-     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\MouseFollow.cs" />
-     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\FPSTest.cs" />
-     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\FPSDisplay.cs" />
-     <Compile Include="Assets\Prefabs\BulletTrail\LineFade.cs" />
-     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_Translate.cs" />
-     <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_AutoRotate.cs" />
-     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_New.cs" />
-     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
-     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
-     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RotateCamera.cs" />
      <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDir.cs" />
+     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\DemoManager.cs" />
+     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_Translate.cs" />
+     <Compile Include="Assets\_Scripts\GameManager.cs" />
+     <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_New.cs" />
+     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\FPSTest.cs" />
+     <Compile Include="Assets\_Scripts\Combat\MouseLooker.cs" />
      <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_LightFlicker.cs" />
+     <Compile Include="Assets\_Scripts\Combat\Shooter.cs" />
      <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_AutoDestructShuriken.cs" />
-     <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
-     <Compile Include="Assets\_Scripts\Police\Police.cs" />
-     <Compile Include="Assets\_Scripts\Pedestrian\PedestrianSpawner.cs" />
-     <Compile Include="Assets\_Scripts\MissionCollider.cs" />
-     <Compile Include="Assets\_Scripts\MissionWaypoint.cs" />
-     <Compile Include="Assets\_Scripts\StaticVars.cs" />
-     <Compile Include="Assets\_Scripts\MissionControllers.cs" />
+     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\MouseFollow.cs" />
+     <Compile Include="Assets\_Scripts\WaypointTrafficSystem\Waypoint.cs" />
+     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\CameraShake.cs" />
+     <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\OneshotParticleSystemsManager.cs" />
+     <Compile Include="Assets\_Scripts\Pedestrian\CarSpawner.cs" />
+     <Compile Include="Assets\_Scripts\Pedestrian\CarRandomizer.cs" />
      <None Include="Assets\Dark City 2\Assets\Source\Shaders\Standard Color Mask.shader" />
      <None Include="Assets\JMO Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
      <None Include="Assets\Mirza Beig\_DOCS\README - Inferno VFX.txt" />
@@ -338,11 +340,11 @@
  <Reference Include="UnityEditor.UnityConnectModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.14f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
  </Reference>
- <Reference Include="Newtonsoft.Json">
- <HintPath>E:/Unity/Nikkhipto/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
- </Reference>
  <Reference Include="Unity.Burst.Unsafe">
  <HintPath>E:/Unity/Nikkhipto/Library/PackageCache/com.unity.burst@1.3.4/Unity.Burst.Unsafe.dll</HintPath>
+ </Reference>
+ <Reference Include="Newtonsoft.Json">
+ <HintPath>E:/Unity/Nikkhipto/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.14f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -689,12 +691,6 @@
  <Reference Include="System.Xml.Serialization">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.14f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
  </Reference>
- <Reference Include="Cinemachine">
- <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
- </Reference>
- <Reference Include="com.unity.cinemachine.editor">
- <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
- </Reference>
  <Reference Include="Unity.VSCode.Editor">
  <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
@@ -707,20 +703,23 @@
  <Reference Include="Unity.Sysroot.Linux_x86_64">
  <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Sysroot.Linux_x86_64.dll</HintPath>
  </Reference>
- <Reference Include="Unity.Toolchain.Win-x86_64-Linux-x86_64">
- <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Toolchain.Win-x86_64-Linux-x86_64.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Timeline.Editor">
- <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
- </Reference>
  <Reference Include="Unity.Timeline">
  <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
  <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.Burst.Editor">
+ <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Sprite.Editor">
+ <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.InputSystem">
+ <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PlasticSCM.Editor">
  <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
@@ -731,32 +730,35 @@
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
- <Reference Include="Unity.SysrootPackage.Editor">
- <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.SysrootPackage.Editor.dll</HintPath>
+ <Reference Include="Unity.Animation.Rigging">
+ <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Animation.Rigging.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Mathematics">
  <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
  </Reference>
+ <Reference Include="Cinemachine">
+ <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.Burst">
  <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
+ </Reference>
+ <Reference Include="com.unity.cinemachine.editor">
+ <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Toolchain.Win-x86_64-Linux-x86_64">
+ <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Toolchain.Win-x86_64-Linux-x86_64.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Timeline.Editor">
+ <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Mathematics.Editor">
  <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
  </Reference>
- <Reference Include="Unity.Animation.Rigging">
- <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Animation.Rigging.dll</HintPath>
- </Reference>
  <Reference Include="Unity.Animation.Rigging.Editor">
  <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Animation.Rigging.Editor.dll</HintPath>
  </Reference>
- <Reference Include="Unity.Burst.Editor">
- <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.InputSystem">
- <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Sprite.Editor">
- <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+ <Reference Include="Unity.SysrootPackage.Editor">
+ <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.SysrootPackage.Editor.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

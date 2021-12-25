@@ -16,12 +16,28 @@ public class PedestrianNavigationController : MonoBehaviour
 
     public bool walk=false;
 
-    public Animator _animator;
+    public bool isPeds;
+    public bool isVehicle;
+
+    private Animator _animator;
     // Start is called before the first frame update
     void Start()
     {
-        _animator = GetComponentInChildren<Animator>();
-        movementSpeed = Random.Range(1, 2);
+        if (isPeds && !isVehicle)
+        {
+            _animator = GetComponentInChildren<Animator>();
+        }
+        if(isPeds)
+        {
+            movementSpeed = Random.Range(1, 2);
+        }
+        else if (isVehicle)
+        {
+            movementSpeed = Random.Range(5, 8);
+        }
+        
+        
+        
 
     }
 
@@ -47,8 +63,13 @@ public class PedestrianNavigationController : MonoBehaviour
             {
                 reachedDestination = true;
             }
-            _animator.SetBool("isWalking", true);
-            _animator.SetFloat("offset", 0f);
+
+            if (isPeds && !isVehicle)
+            {
+                _animator.SetBool("isWalking", true);
+                _animator.SetFloat("offset", 0f);
+            }
+            
         }
         
     }

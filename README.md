@@ -17,3 +17,4 @@
 - Initiate Mission Entry Protocol
 - Spawn Traffic (Pre Defined Spawn Locations/Random axis) - Used Random Axis
 - Suggestion for Self: Add Two/Three More Pedestrian at the Final day if there is any time else <b>IGNORE</b>
+- Mission 01 Cutscene Animation configured.
