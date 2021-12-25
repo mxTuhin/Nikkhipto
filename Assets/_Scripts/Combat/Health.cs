@@ -10,10 +10,12 @@ public class Health : MonoBehaviour
     private Animator _animtor;
     public bool isDeadTrigger=false;
     public SpriteRenderer healthBar;
+    public GameObject playerCharacter;
 
     private void Start()
     {
         _animtor = GetComponentInChildren<Animator>();
+        playerCharacter = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void TakeDamage(float damage,  string hitObject)
@@ -27,8 +29,9 @@ public class Health : MonoBehaviour
             
         }
 
-        if (!isDeadTrigger)
+        if (!this.isDeadTrigger)
         {
+            // healthBar.transform.Rotate(0, playerCharacter.transform.position.y, 0);
             if (hitObject.Equals("Police"))
             {
                 if (!healthBar.gameObject.activeSelf)
@@ -40,6 +43,7 @@ public class Health : MonoBehaviour
                 {
                     healthBar.color=Color.red;
                 }
+                gameObject.transform.LookAt(playerCharacter.transform);
                 _animtor.SetTrigger("isShot");
             }
             if (hitObject.Equals("Peds"))
@@ -53,6 +57,7 @@ public class Health : MonoBehaviour
                 {
                     healthBar.color=Color.red;
                 }
+                // gameObject.transform.LookAt(playerCharacter.transform);
                 _animtor.SetTrigger("isShot");
                 
                 
