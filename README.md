@@ -18,3 +18,14 @@
 - Spawn Traffic (Pre Defined Spawn Locations/Random axis) - Used Random Axis
 - Suggestion for Self: Add Two/Three More Pedestrian at the Final day if there is any time else <b>IGNORE</b>
 - Mission 01 Cutscene Animation configured.
+
+## Day 3 (25.12.2021)
+- Implement Car traffic System
+- Implement Traffic Branch
+- Finalise the story
+- Fix the Mission point Marker for Mission 1
+- Make Cut Scene for all the missions
+
+
+## Devlogs
+- Devlog - 1: [To Be Set]
