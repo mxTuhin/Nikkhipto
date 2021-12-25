@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public float health = 100f;
+    public float maxHealth = 100;
+    private float health;
     private Animator _animtor;
     public bool isDeadTrigger=false;
     public SpriteRenderer healthBar;
@@ -14,6 +15,7 @@ public class Health : MonoBehaviour
 
     private void Start()
     {
+        health = maxHealth;
         _animtor = GetComponentInChildren<Animator>();
         playerCharacter = GameObject.FindGameObjectWithTag("Player");
     }
@@ -23,13 +25,17 @@ public class Health : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
-            _animtor.SetTrigger("isDead");
-            isDeadTrigger = true;
+            if (!isDeadTrigger)
+            {
+                _animtor.SetTrigger("isDead");
+                isDeadTrigger = true;
+            }
             healthBar.size = new Vector2(0,0f);
             if (hitObject.Equals("LeaderOne"))
             {
                 Destroy(gameObject, 3f);
                 SelfObjectDestroyer.instance.destroyMissionOneComponents(30f);
+                GameManager.instance.missionPassedText[0].SetActive(true);
             }
             else
             {
@@ -39,7 +45,7 @@ public class Health : MonoBehaviour
             
         }
 
-        if (!this.isDeadTrigger)
+        if (!isDeadTrigger)
         {
             // healthBar.transform.Rotate(0, playerCharacter.transform.position.y, 0);
             if (hitObject.Equals("Police"))
@@ -48,7 +54,7 @@ public class Health : MonoBehaviour
                 {
                     healthBar.gameObject.SetActive(true);
                 }
-                healthBar.size -= new Vector2(0,0.256f);
+                healthBar.size -= new Vector2(0,0.85f);
                 if (healthBar.size.y <= 1.3)
                 {
                     healthBar.color=Color.red;
@@ -85,6 +91,20 @@ public class Health : MonoBehaviour
                 {
                     healthBar.color=Color.red;
                 }
+            }
+
+            if (hitObject.Equals("Player"))
+            {
+                if (!healthBar.gameObject.activeSelf)
+                {
+                    healthBar.gameObject.SetActive(true);
+                }
+                healthBar.size -= new Vector2(0,0.256f);
+                if (healthBar.size.y <= 1.3)
+                {
+                    healthBar.color=Color.red;
+                }
+                // gameObject.transform.LookAt(playerCharacter.transform);
             }
             
         }

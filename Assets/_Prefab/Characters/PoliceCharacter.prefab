@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1432612347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1432612348}
+  m_Layer: 0
+  m_Name: FlashPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1432612348
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432612347}
+  m_LocalRotation: {x: 0.7345791, y: -0.026802856, z: -0.30849338, w: -0.60374415}
+  m_LocalPosition: {x: -0.011417396, y: 0.09978455, z: -0.6934227}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_Children: []
+  m_Father: {fileID: 5169589956288422215}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4797208318816599709
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,6 +42,8 @@ GameObject:
   - component: {fileID: 4797208318816599711}
   - component: {fileID: 4797208318816599704}
   - component: {fileID: 4797208318816599705}
+  - component: {fileID: 1213635130}
+  - component: {fileID: 1213635131}
   m_Layer: 0
   m_Name: PoliceCharacter
   m_TagString: Untagged
@@ -47,9 +79,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e26f4fec3144f4cb072fa91c316f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  maxHealth: 30
   isDeadTrigger: 0
   healthBar: {fileID: 211867945502091166}
+  playerCharacter: {fileID: 0}
 --- !u!136 &4797208318816599704
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -76,6 +109,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12292b117e994d84292165f5c64eeca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1213635130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4797208318816599709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2636afa8e505a344a9d429932a353d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 119
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  walkPoint: {x: 0, y: 0, z: 0}
+  walkPointRange: 0
+  slightRange: 10
+  atttackRange: 10
+  playerInSightRange: 0
+  playerInAttackRange: 0
+  muzzleFlash: {fileID: 124618, guid: 50b469ba1ad457c4984153c2618031ea, type: 3}
+  flashPosition: {fileID: 1432612347}
+--- !u!195 &1213635131
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4797208318816599709}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1
+  m_Speed: 2
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &6361928518479732376
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,5 +299,10 @@ PrefabInstance:
 --- !u!4 &2072745972559950150 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6796148399159596849, guid: 6e175103cf47c194dbb444da02476dd3, type: 3}
+  m_PrefabInstance: {fileID: 4797208319556183671}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5169589956288422215 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 372964378163431216, guid: 6e175103cf47c194dbb444da02476dd3, type: 3}
   m_PrefabInstance: {fileID: 4797208319556183671}
   m_PrefabAsset: {fileID: 0}

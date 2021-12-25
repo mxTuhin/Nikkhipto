@@ -37,7 +37,7 @@ public class Shooter : MonoBehaviour
     }
 
     
-    void Shoot()
+    public void Shoot()
     {
         Vector2 center = new Vector2(Screen.width / 2, Screen.height / 2);
         RaycastHit hit;
@@ -87,6 +87,7 @@ public class Shooter : MonoBehaviour
         }
 
     }
+    
 
     IEnumerator waitBeforeFlash()
     {

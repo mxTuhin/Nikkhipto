@@ -15,13 +15,21 @@ public class GameManager : MonoBehaviour
     public GameObject sceneChangeBackground;
 
     public GameObject[] missionSelectors;
+
+    public GameObject[] playerSpawns;
+
+    public GameObject[] missionPassedText;
+
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
         if (StaticVars.isMissionOneTriggered)
         {
+            player.transform.position = new Vector3(playerSpawns[0].transform.position.x, playerSpawns[0].transform.position.y, playerSpawns[0].transform.position.z) ;
             missionOneObjects.SetActive(true);
+            
         }
 
         if (StaticVars.isMissionOneTriggered)
