@@ -94,6 +94,7 @@
      <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\CameraShake.cs" />
      <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\OneshotParticleSystemsManager.cs" />
      <Compile Include="Assets\8K Skybox Pack Free\Example Scenes\Script\RotateCamera.cs" />
+     <Compile Include="Assets\_Scripts\Combat\HealthPickup.cs" />
      <None Include="Assets\Dark City 2\Assets\Source\Shaders\Standard Color Mask.shader" />
      <None Include="Assets\JMO Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
      <None Include="Assets\Mirza Beig\_DOCS\README - Inferno VFX.txt" />

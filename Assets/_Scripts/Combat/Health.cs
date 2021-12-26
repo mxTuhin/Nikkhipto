@@ -13,6 +13,8 @@ public class Health : MonoBehaviour
     public SpriteRenderer healthBar;
     public GameObject playerCharacter;
 
+    public float shotGrace;
+
     private void Start()
     {
         health = maxHealth;
@@ -20,8 +22,20 @@ public class Health : MonoBehaviour
         playerCharacter = GameObject.FindGameObjectWithTag("Player");
     }
 
+    private void Update()
+    {
+        if (healthBar.gameObject.activeSelf)
+        {
+            if (Time.time - shotGrace >= 3)
+            {
+                healthBar.gameObject.SetActive(false);
+            }
+        }
+    }
+
     public void TakeDamage(float damage,  string hitObject)
     {
+        shotGrace = Time.time;
         health -= damage;
         if (health <= 0)
         {
@@ -105,7 +119,7 @@ public class Health : MonoBehaviour
                 {
                     healthBar.gameObject.SetActive(true);
                 }
-                healthBar.size -= new Vector2(0,0.0512f);
+                healthBar.size -= new Vector2(0,0.128f);
                 if (healthBar.size.y <= 1.3)
                 {
                     healthBar.color=Color.red;
@@ -116,6 +130,18 @@ public class Health : MonoBehaviour
         }
         
 
+    }
+
+    public void addHealth()
+    {
+        health = 200;
+        healthBar.size = new Vector2(2.56f, 2.56f);
+        healthBar.color = new Color(0, 255, 196, 255);
+        if (!healthBar.gameObject.activeSelf)
+        {
+            healthBar.gameObject.SetActive(true);
+        }
+        shotGrace = Time.time;
     }
     
 }
