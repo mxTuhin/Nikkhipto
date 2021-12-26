@@ -30,6 +30,7 @@ public class MissionCollider : MonoBehaviour
                                 StaticVars.missionSelector = 0;
                                 StaticVars.isMissionOneTriggered = true;
                                 GameManager.instance.sceneChangeBackground.SetActive(true);
+                                GameManager.instance.missionNameImages[StaticVars.missionSelector].SetActive(true);
                                 StaticVars.inMission = true;
                                 StartCoroutine(changeScene("Mission1Animate"));
                                 
@@ -43,6 +44,7 @@ public class MissionCollider : MonoBehaviour
                                     StaticVars.missionSelector = 1;
                                     StaticVars.isMissionTwoTriggered = true;
                                     GameManager.instance.sceneChangeBackground.SetActive(true);
+                                    GameManager.instance.missionNameImages[StaticVars.missionSelector].SetActive(true);
                                     StaticVars.inMission = true;
                                     StartCoroutine(changeScene("Mission2Animate"));
                                 }
@@ -62,6 +64,7 @@ public class MissionCollider : MonoBehaviour
                                     StaticVars.missionSelector = 2;
                                     StaticVars.isMissionThreeTriggered = true;
                                     GameManager.instance.sceneChangeBackground.SetActive(true);
+                                    GameManager.instance.missionNameImages[StaticVars.missionSelector].SetActive(true);
                                     StaticVars.inMission = true;
                                     StartCoroutine(changeScene("Mission3Animate"));
                                 }
@@ -79,6 +82,9 @@ public class MissionCollider : MonoBehaviour
                                 {
                                     print("Mission 04");
                                     StaticVars.missionSelector = 3;
+                                    GameManager.instance.sceneChangeBackground.SetActive(true);
+                                    GameManager.instance.missionNameImages[StaticVars.missionSelector].SetActive(true);
+                                    StaticVars.inMission = true;
                                 }
                                 else
                                 {

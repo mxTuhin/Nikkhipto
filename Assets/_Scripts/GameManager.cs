@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] missionPassedText;
 
+    public GameObject[] missionNameImages;
+
     public GameObject player;
 
     public Text canNotEnterMission;
