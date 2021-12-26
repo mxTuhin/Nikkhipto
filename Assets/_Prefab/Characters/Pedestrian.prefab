@@ -138,7 +138,6 @@ MonoBehaviour:
   walk: 0
   isPeds: 1
   isVehicle: 0
-  _animator: {fileID: 0}
 --- !u!136 &8040198846463773557
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -161,7 +160,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8040198846463773552}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -194,9 +193,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e26f4fec3144f4cb072fa91c316f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  maxHealth: 100
   isDeadTrigger: 0
   healthBar: {fileID: 483595116608004640}
+  playerCharacter: {fileID: 0}
 --- !u!1001 &8040198846784645088
 PrefabInstance:
   m_ObjectHideFlags: 0

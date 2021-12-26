@@ -52,6 +52,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\_Scripts\TimedObjectDestructor.cs" />
      <Compile Include="Assets\_Scripts\MissionCollider.cs" />
      <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RotateCamera.cs" />
      <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
@@ -65,6 +66,8 @@
      <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_AutoRotate.cs" />
      <Compile Include="Assets\_Scripts\ChangeLevel.cs" />
      <Compile Include="Assets\Prefabs\BulletTrail\LineFade.cs" />
+     <Compile Include="Assets\_Scripts\M-Controllers\Mission2Controller.cs" />
+     <Compile Include="Assets\_Scripts\Police\EnemyAI.cs" />
      <Compile Include="Assets\_Scripts\Pedestrian\PedestrianNavigationController.cs" />
      <Compile Include="Assets\_Scripts\StaticVars.cs" />
      <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
@@ -90,9 +93,7 @@
      <Compile Include="Assets\_Scripts\Pedestrian\CarRandomizer.cs" />
      <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\CameraShake.cs" />
      <Compile Include="Assets\Mirza Beig\Particle Systems\_Common\Scripts\_Demo\OneshotParticleSystemsManager.cs" />
-     <Compile Include="Assets\_Scripts\TimedObjectDestructor.cs" />
-     <Compile Include="Assets\_Scripts\Police\EnemyAI.cs" />
-     <Compile Include="Assets\_Scripts\M-Controllers\Mission2Controller.cs" />
+     <Compile Include="Assets\8K Skybox Pack Free\Example Scenes\Script\RotateCamera.cs" />
      <None Include="Assets\Dark City 2\Assets\Source\Shaders\Standard Color Mask.shader" />
      <None Include="Assets\JMO Assets\Cartoon FX\Shaders\CFX3 Multiply Color.shader" />
      <None Include="Assets\Mirza Beig\_DOCS\README - Inferno VFX.txt" />
@@ -101,6 +102,7 @@
      <None Include="Assets\Dark City 2\Assets\Source\Shaders\Fog Shader.shader" />
      <None Include="Assets\Dark City 2\Assets\Source\Shaders\Rain_alpha.shader" />
      <None Include="Assets\Dark City 2\Assets\Source\Shaders\Movie.shader" />
+     <None Include="Assets\8K Skybox Pack Free\ReadMe.txt" />
      <None Include="Assets\Dark City 2\Assets\Source\Shaders\Billboards1.shader" />
      <None Include="Assets\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
      <None Include="Assets\Dark City 2\Assets\Source\Shaders\Standard Panner.shader" />

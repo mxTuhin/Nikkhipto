@@ -14,4 +14,6 @@ public class StaticVars : MonoBehaviour
     
     public static bool showWaypointMarker=false;
 
+    public static bool inMission;
+
 }

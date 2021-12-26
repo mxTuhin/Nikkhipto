@@ -35,6 +35,8 @@ public class MissionWaypoint : MonoBehaviour
     {
         
         
+        
+        
         float minX = waypointMarker.GetPixelAdjustedRect().width / 2;
         float maxX = Screen.width - minX;
 

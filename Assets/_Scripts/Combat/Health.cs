@@ -36,6 +36,12 @@ public class Health : MonoBehaviour
                 Destroy(gameObject, 3f);
                 SelfObjectDestroyer.instance.destroyMissionOneComponents(30f);
                 GameManager.instance.missionPassedText[0].SetActive(true);
+                StaticVars.inMission = false;
+            }
+
+            if (hitObject.Equals("Player"))
+            {
+                StaticVars.inMission = false;
             }
             else
             {
@@ -99,7 +105,7 @@ public class Health : MonoBehaviour
                 {
                     healthBar.gameObject.SetActive(true);
                 }
-                healthBar.size -= new Vector2(0,0.256f);
+                healthBar.size -= new Vector2(0,0.0512f);
                 if (healthBar.size.y <= 1.3)
                 {
                     healthBar.color=Color.red;

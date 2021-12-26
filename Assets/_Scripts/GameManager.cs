@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,6 +22,9 @@ public class GameManager : MonoBehaviour
     public GameObject[] missionPassedText;
 
     public GameObject player;
+
+    public Text canNotEnterMission;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,7 +61,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        RenderSettings.skybox.SetFloat("_Rotation", Time.time * 1.2f);
+
     }
     
     
