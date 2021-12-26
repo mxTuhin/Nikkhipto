@@ -25,6 +25,7 @@ public class MissionWaypoint : MonoBehaviour
         instance = this;
         if (StaticVars.showWaypointMarker)
         {
+            print("Checking Waypoint");
             waypointMarker.gameObject.SetActive(true);
         }
 

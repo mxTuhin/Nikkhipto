@@ -83,6 +83,7 @@ MonoBehaviour:
   isDeadTrigger: 0
   healthBar: {fileID: 211867945502091166}
   playerCharacter: {fileID: 0}
+  shotGrace: 0
 --- !u!136 &4797208318816599704
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -135,6 +136,8 @@ MonoBehaviour:
   playerInAttackRange: 0
   muzzleFlash: {fileID: 124618, guid: 50b469ba1ad457c4984153c2618031ea, type: 3}
   flashPosition: {fileID: 1432612347}
+  _audioSource: {fileID: 0}
+  clip: {fileID: 8300000, guid: 66468eeb656a2384ab75fb2121b5077d, type: 3}
 --- !u!195 &1213635131
 NavMeshAgent:
   m_ObjectHideFlags: 0

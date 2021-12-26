@@ -16,6 +16,8 @@ public class Shooter : MonoBehaviour
 
     public GameObject bloodSplash;
     public GameObject bulletPrefab;
+    public AudioSource shooterAudioSource;
+    public AudioClip shootSFX;
     void Update()
     {
 
@@ -42,6 +44,8 @@ public class Shooter : MonoBehaviour
         Vector2 center = new Vector2(Screen.width / 2, Screen.height / 2);
         RaycastHit hit;
         Ray ray = cam.ScreenPointToRay(center);
+        shooterAudioSource.volume = Random.Range(0.1f, 0.2f);
+        shooterAudioSource.PlayOneShot(shootSFX);
         StartCoroutine(waitBeforeFlash());
         
         Debug.DrawRay(ray.origin, ray.direction, Color.red,5);

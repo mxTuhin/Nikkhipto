@@ -37,21 +37,21 @@ public class MissionCollider : MonoBehaviour
                             }
                             else if (mission2)
                             {
-                                // if (StaticVars.isMissionOneTriggered)
-                                // {
+                                if (StaticVars.isMissionOneTriggered)
+                                {
                                     print("Mission 02");
                                     StaticVars.missionSelector = 1;
                                     StaticVars.isMissionTwoTriggered = true;
                                     GameManager.instance.sceneChangeBackground.SetActive(true);
                                     StaticVars.inMission = true;
                                     StartCoroutine(changeScene("Mission2Animate"));
-                                // }
-                                // else
-                                // {
-                                //     GameManager.instance.canNotEnterMission.gameObject.SetActive(true);
-                                //     GameManager.instance.canNotEnterMission.text = "Complete Mission A First";
-                                //     StartCoroutine(hideMissionPromptText());
-                                // }
+                                }
+                                else
+                                {
+                                    GameManager.instance.canNotEnterMission.gameObject.SetActive(true);
+                                    GameManager.instance.canNotEnterMission.text = "Complete Mission A First";
+                                    StartCoroutine(hideMissionPromptText());
+                                }
                                 
                             }
                             else if (mission3)
@@ -60,6 +60,10 @@ public class MissionCollider : MonoBehaviour
                                 {
                                     print("Mission 03");
                                     StaticVars.missionSelector = 2;
+                                    StaticVars.isMissionThreeTriggered = true;
+                                    GameManager.instance.sceneChangeBackground.SetActive(true);
+                                    StaticVars.inMission = true;
+                                    StartCoroutine(changeScene("Mission3Animate"));
                                 }
                                 else
                                 {

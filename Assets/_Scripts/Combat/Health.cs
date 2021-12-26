@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -51,11 +52,13 @@ public class Health : MonoBehaviour
                 SelfObjectDestroyer.instance.destroyMissionOneComponents(30f);
                 GameManager.instance.missionPassedText[0].SetActive(true);
                 StaticVars.inMission = false;
+                StaticVars.isMissionOneComplete = true;
+                StaticVars.showWaypointMarker = false;
             }
 
             if (hitObject.Equals("Player"))
             {
-                StaticVars.inMission = false;
+                StartCoroutine(respawnPLayer());
             }
             else
             {
@@ -119,7 +122,7 @@ public class Health : MonoBehaviour
                 {
                     healthBar.gameObject.SetActive(true);
                 }
-                healthBar.size -= new Vector2(0,0.128f);
+                healthBar.size -= new Vector2(0,0.0512f);
                 if (healthBar.size.y <= 1.3)
                 {
                     healthBar.color=Color.red;
@@ -134,7 +137,7 @@ public class Health : MonoBehaviour
 
     public void addHealth()
     {
-        health = 200;
+        health = 500;
         healthBar.size = new Vector2(2.56f, 2.56f);
         healthBar.color = new Color(0, 255, 196, 255);
         if (!healthBar.gameObject.activeSelf)
@@ -142,6 +145,13 @@ public class Health : MonoBehaviour
             healthBar.gameObject.SetActive(true);
         }
         shotGrace = Time.time;
+    }
+
+    public IEnumerator respawnPLayer()
+    {
+        GameManager.instance.sceneChangeBackground.SetActive(true);
+        yield return new WaitForSeconds(2.0f);
+        SceneManager.LoadScene("PrimaryScene");
     }
     
 }

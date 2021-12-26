@@ -38,6 +38,7 @@
 - Start Building the Map with Building Props and sort of things
 - Add Child Character for Park
 - Add Audio SFX like shoot, blast, walk, run - Background Environment Sound etc
+- Add Player Respawn System
 
 ## Devlogs
 - Devlog - 1: [To Be Set]

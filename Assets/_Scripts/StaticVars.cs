@@ -11,6 +11,12 @@ public class StaticVars : MonoBehaviour
     public static bool isMissionTwoTriggered=false;
     public static bool isMissionThreeTriggered=false;
     public static bool isMissionFourTriggered=false;
+
+    public static bool isMissionOneComplete = true;
+    public static bool isMissionTwoComplete = false;
+    
+    public static bool isMissionThreeComplete = false;
+    public static bool isMissionFourComplete = false;
     
     public static bool showWaypointMarker=false;
 

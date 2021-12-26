@@ -29,21 +29,18 @@ public class EnemyAI : MonoBehaviour
     public GameObject flashPosition;
 
     private Health _health;
+    private bool deadTrigger = false;
+
+    public AudioSource _audioSource;
+    public AudioClip clip;
 
 
     private void Awake()
     {
         _health = GetComponent<Health>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        if (player != null)
-        {
-            print("Found Player");
-        }
         agent = GetComponent<NavMeshAgent>();
-        if (agent != null)
-        {
-            print("Nav Player");
-        }
+
 
     }
     
@@ -57,13 +54,16 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_health.isDeadTrigger)
-            return;
-        playerInSightRange = Physics.CheckSphere(transform.position, slightRange, whatIsPlayer);
-        playerInAttackRange = Physics.CheckSphere(transform.position, atttackRange, whatIsPlayer);
-        if (!playerInSightRange && !playerInAttackRange) patrolling();
-        if (playerInSightRange && !playerInAttackRange) chasePlayer();
-        if (playerInAttackRange && playerInSightRange) attackPlayer();
+        if (!_health.isDeadTrigger)
+        {
+            
+            playerInSightRange = Physics.CheckSphere(transform.position, slightRange, whatIsPlayer);
+            playerInAttackRange = Physics.CheckSphere(transform.position, atttackRange, whatIsPlayer);
+            if (!playerInSightRange && !playerInAttackRange) patrolling();
+            if (playerInSightRange && !playerInAttackRange) chasePlayer();
+            if (playerInAttackRange && playerInSightRange) attackPlayer();
+        }
+
 
 
     }
@@ -102,6 +102,7 @@ public class EnemyAI : MonoBehaviour
 
         if (!alreadyAttacked)
         {
+            // print("Entering");
             Shoot();
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
@@ -111,8 +112,11 @@ public class EnemyAI : MonoBehaviour
     void Shoot()
     {
         _animator.SetTrigger("isShot");
-        player.GetComponent<Health>().TakeDamage(10, "Player");
+        _audioSource.volume = Random.Range(0.1f, 0.2f);
+        _audioSource.PlayOneShot(clip);
+        player.GetComponent<Health>().TakeDamage(5, "Player");
         Instantiate(muzzleFlash, flashPosition.transform.position, Quaternion.identity);
+        
         
     }
     private void ResetAttack()

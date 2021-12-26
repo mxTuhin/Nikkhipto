@@ -66,7 +66,11 @@ public class PlayerController : MonoBehaviour
     private int targetValue;
 
     public GameObject largeMap;
+    
+    private AudioSource _audioSource;
+    public AudioClip[] walkStepShot;
 
+    private bool canWalkSound=true;
     // public GameObject gameOver;
     
     
@@ -80,7 +84,9 @@ public class PlayerController : MonoBehaviour
         movementSpeed = walkSpeed;
         _characterController = GetComponent<CharacterController>();
         _animator = gameObject.GetComponentInChildren<Animator>();
+        _audioSource = GetComponent<AudioSource>();
         rifleInHand.SetActive(false);
+        
         
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -109,12 +115,20 @@ public class PlayerController : MonoBehaviour
         {
             movementSpeed = runSpeed;
             runTrigger=true;
+            if (canWalkSound)
+            {
+                StartCoroutine(DoWalkSound(0.2f));
+            }
+
+            
         }
         else
         {
             movementSpeed = walkSpeed;
             runTrigger = false;
         }
+        
+        
 
         
         isGrounded = false;
@@ -181,12 +195,23 @@ public class PlayerController : MonoBehaviour
             // float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothingTime);
             // transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
+            
+
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             
             _characterController.Move(moveDir * movementSpeed * Time.deltaTime);
         }
         
+        if (isGrounded && direction.magnitude >= 0.1f && _audioSource.isPlaying == false && !runTrigger)
+        {
+            _audioSource.volume = Random.Range(0.8f, 1);
+            _audioSource.pitch = Random.Range(0.8f, 1.1f);
+           
+            _audioSource.Play();
+        }
         
+
+
         _characterController.Move(velocity * Time.deltaTime);
         
         if ((horizontalMovement > 0.05f || horizontalMovement<-0.05) || (verticalMovement > 0.05 || verticalMovement < -0.05))
@@ -330,6 +355,16 @@ public class PlayerController : MonoBehaviour
         }
         walkSpeed = 4;
         runSpeed = 8;
+    }
+
+    IEnumerator DoWalkSound(float speed)
+    {
+        _audioSource.volume = Random.Range(0.3f, 0.5f);
+        _audioSource.pitch = Random.Range(0.5f, 0.8f);
+        _audioSource.PlayOneShot(walkStepShot[UnityEngine.Random.Range(0, walkStepShot.Length)]);
+        canWalkSound = false;
+        yield return new WaitForSeconds(speed);
+        canWalkSound = true;
     }
 
     // public void TakeDamage()

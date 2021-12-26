@@ -52,7 +52,7 @@ public class Mission2Controller : MonoBehaviour
 
     IEnumerator swapGun()
     {
-        StaticVars.showWaypointMarker = true;
+        
         yield return new WaitForSeconds(58f);
         policeGun.SetActive(false);
         playerGun.SetActive(true);
@@ -61,6 +61,7 @@ public class Mission2Controller : MonoBehaviour
 
     IEnumerator lookToplayer()
     {
+        StaticVars.showWaypointMarker = true;
         yield return new WaitForSeconds(22f);
         police.transform.LookAt(player.transform);
     }
