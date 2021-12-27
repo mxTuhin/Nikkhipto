@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] missionSelectors;
 
     public GameObject[] playerSpawns;
+    public GameObject playerMissionThreeSpawn;
 
     public GameObject[] missionPassedText;
 
@@ -35,6 +36,12 @@ public class GameManager : MonoBehaviour
 
     public GameObject preMissionThreeObject;
     public GameObject postMissionThreeObject;
+
+    public GameObject cineMachineCamera;
+    public GameObject mainCamera;
+    public GameObject animateCamera;
+
+    public GameObject sceneInfo;
 
 
     
@@ -77,6 +84,7 @@ public class GameManager : MonoBehaviour
             
             StartCoroutine(hideMissionPromptText(5f));
         }
+        
 
         if (StaticVars.isMissionOneTriggered)
         {
@@ -103,6 +111,9 @@ public class GameManager : MonoBehaviour
             preMissionThreeObject.SetActive(false);
             postMissionThreeObject.SetActive(true);
             missionPassedText[2].SetActive(true);
+            player.transform.position = new Vector3(playerMissionThreeSpawn.transform.position.x,
+                playerMissionThreeSpawn.transform.position.y, playerMissionThreeSpawn.transform.position.z);
+            
         }
         
     }
@@ -111,6 +122,33 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         RenderSettings.skybox.SetFloat("_Rotation", Time.time * 1.2f);
+
+        
+        
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            QualitySettings.SetQualityLevel(0, true);
+        }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            QualitySettings.SetQualityLevel(1, true);
+        }
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            QualitySettings.SetQualityLevel(2, true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            if (!sceneInfo.activeSelf)
+            {
+                sceneInfo.SetActive(true);
+            }
+            else
+            {
+                sceneInfo.SetActive(false);
+            }
+        }
 
     }
 

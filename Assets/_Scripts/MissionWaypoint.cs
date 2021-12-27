@@ -23,19 +23,28 @@ public class MissionWaypoint : MonoBehaviour
     void Start()
     {
         instance = this;
-        if (StaticVars.showWaypointMarker)
-        {
-            print("Checking Waypoint");
-            waypointMarker.gameObject.SetActive(true);
-        }
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        
+
+        if (StaticVars.showWaypointMarker)
+        {
+            
+            if (!waypointMarker.gameObject.activeSelf)
+            {
+                print("Checking Waypoint");
+                waypointMarker.gameObject.SetActive(true);
+            }
+            
+        }
+        else
+        {
+            waypointMarker.gameObject.SetActive(false);
+        }
         
         
         float minX = waypointMarker.GetPixelAdjustedRect().width / 2;

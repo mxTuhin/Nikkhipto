@@ -78,13 +78,15 @@ public class MissionCollider : MonoBehaviour
                             }
                             else if (mission4)
                             {
-                                if (StaticVars.isMissionFourTriggered)
+                                if (StaticVars.isMissionThreeTriggered)
                                 {
                                     print("Mission 04");
                                     StaticVars.missionSelector = 3;
+                                    StaticVars.isMissionFourTriggered = true;
                                     GameManager.instance.sceneChangeBackground.SetActive(true);
                                     GameManager.instance.missionNameImages[StaticVars.missionSelector].SetActive(true);
                                     StaticVars.inMission = true;
+                                    StartCoroutine(changeScene("Mission4Animate"));
                                 }
                                 else
                                 {
@@ -115,7 +117,7 @@ public class MissionCollider : MonoBehaviour
     IEnumerator changeScene(string missionName)
     {
         MissionWaypoint.instance.waypointMarker.gameObject.SetActive(true);
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(2.0f);
         SceneManager.LoadScene(missionName);
     }
 

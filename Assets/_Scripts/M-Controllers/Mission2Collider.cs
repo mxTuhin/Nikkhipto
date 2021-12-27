@@ -12,7 +12,16 @@ public class Mission2Collider : MonoBehaviour
             GameManager.instance.missionPassedText[1].SetActive(true);
             StaticVars.inMission = false;
             StaticVars.isMissionTwoComplete = true;
+            StaticVars.showWaypointMarker = false;
+            StartCoroutine(deactivateMissionTwoObjects());
             Destroy(gameObject);
+            
         }
+    }
+
+    IEnumerator deactivateMissionTwoObjects()
+    {
+        yield return new WaitForSeconds(5f);
+        GameManager.instance.missionTwoObjects.SetActive(false);
     }
 }

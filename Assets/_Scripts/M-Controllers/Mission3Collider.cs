@@ -29,6 +29,7 @@ public class Mission3Collider : MonoBehaviour
                 GameManager.instance.canNotEnterMission.gameObject.SetActive(true);
                 GameManager.instance.canNotEnterMission.text = "Run Fast and get outside of the park";
                 StaticVars.isMissionThreeComplete = true;
+                StaticVars.inMission = false;
                 StaticVars.showWaypointMarker = false;
                 StartCoroutine(GameManager.instance.hideMissionPromptText(5f));
                 StartCoroutine(initiateBlastAnimation(7f));

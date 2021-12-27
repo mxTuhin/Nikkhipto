@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,14 @@ public class ChangeLevel : MonoBehaviour
     void Start()
     {
         Invoke("changeScene", timer);
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            SceneManager.LoadScene("PrimaryScene");
+        }
     }
 
     void changeScene()

@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PedestrianSpawner : MonoBehaviour
 {
@@ -31,8 +33,16 @@ public class PedestrianSpawner : MonoBehaviour
             Transform child = transform.GetChild(Random.Range(0, transform.childCount - 1));
             obj.GetComponent<WaypointNavigator>().currentWaypoint = child.GetComponent<Waypoint>();
             obj.transform.position = child.position;
+            try
+            {
+                obj.transform.SetParent(pedestrianHolder.transform);
+            }
+            catch (Exception e)
+            {
+                
+            }
 
-            obj.transform.SetParent(pedestrianHolder.transform);
+            
 
             yield return new WaitForEndOfFrame();
             count ++ ;

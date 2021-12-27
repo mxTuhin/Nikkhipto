@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class CarSpawner : MonoBehaviour
 {
@@ -39,8 +41,16 @@ public class CarSpawner : MonoBehaviour
             Transform child = transform.GetChild(randomPoint);
             obj.GetComponent<WaypointNavigator>().currentWaypoint = child.GetComponent<Waypoint>();
             obj.transform.position = child.position+new Vector3(0,3f,0);
-            
-            obj.transform.SetParent(carSpawnHolder.transform);
+            try
+            {
+                obj.transform.SetParent(carSpawnHolder.transform);
+            }
+            catch (Exception e)
+            {
+                
+            }
+
+
 
             yield return new WaitForEndOfFrame();
             count ++ ;
