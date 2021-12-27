@@ -54,8 +54,8 @@
   <ItemGroup>
      <Compile Include="Assets\JMO Assets\Cartoon FX Easy Editor\Editor\CFXEasyEditor.cs" />
      <Compile Include="Assets\Editor\WaypointManagerWindow.cs" />
-     <Compile Include="Assets\Editor\WaypointEditor.cs" />
      <Compile Include="Assets\EffectExamples\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
+     <Compile Include="Assets\Editor\WaypointEditor.cs" />
      <None Include="Assets\EffectExamples\Editor\PackageManagerAssembly\PackageImportList.txt" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -303,6 +303,9 @@
  <Reference Include="Unity.Burst.Unsafe">
  <HintPath>E:/Unity/Nikkhipto/Library/PackageCache/com.unity.burst@1.3.4/Unity.Burst.Unsafe.dll</HintPath>
  </Reference>
+ <Reference Include="PackageManagerAssembly">
+ <HintPath>E:/Unity/Nikkhipto/Assets/EffectExamples/Editor/PackageManagerAssembly/PackageManagerAssembly.dll</HintPath>
+ </Reference>
  <Reference Include="log4netPlastic">
  <HintPath>E:/Unity/Nikkhipto/Library/PackageCache/com.unity.collab-proxy@1.5.7/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
  </Reference>
@@ -314,9 +317,6 @@
  </Reference>
  <Reference Include="unityplastic">
  <HintPath>E:/Unity/Nikkhipto/Library/PackageCache/com.unity.collab-proxy@1.5.7/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
- </Reference>
- <Reference Include="PackageManagerAssembly">
- <HintPath>E:/Unity/Nikkhipto/Assets/EffectExamples/Editor/PackageManagerAssembly/PackageManagerAssembly.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
  <HintPath>E:/Unity/Nikkhipto/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
@@ -699,6 +699,9 @@
  <Reference Include="Unity.2D.Sprite.Editor">
  <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.Postprocessing.Editor">
+ <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
@@ -729,6 +732,9 @@
  <Reference Include="com.unity.cinemachine.editor">
  <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.Postprocessing.Runtime">
+ <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.Toolchain.Win-x86_64-Linux-x86_64">
  <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Toolchain.Win-x86_64-Linux-x86_64.dll</HintPath>
  </Reference>
@@ -743,12 +749,6 @@
  </Reference>
  <Reference Include="Unity.SysrootPackage.Editor">
  <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.SysrootPackage.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Postprocessing.Editor">
- <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Postprocessing.Runtime">
- <HintPath>E:/Unity/Nikkhipto/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
