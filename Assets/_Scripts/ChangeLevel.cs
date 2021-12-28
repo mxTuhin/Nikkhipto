@@ -13,6 +13,8 @@ public class ChangeLevel : MonoBehaviour
     void Start()
     {
         StartCoroutine(changeScene(timer));
+        Cursor.visible = false;
+        // Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
