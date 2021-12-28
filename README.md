@@ -62,5 +62,17 @@ Extended Deadline. Completed the planned work within day 5. Not much to do.
 - Submit
 - Changes in Scene/Story Control Flow
 
+
+## Okay. Now Some Developer Backstories
+While participating the Jam i had not thought i would go for something that will require 16 hours+ a day for last six days of my life. 
+Honestly it created a lot of pressure. But now. I am happy that something is done.
+Not Everything was so easy. Not everything is so polished. I implemented some new features that i had no
+experience before. But what i kept beliving every moment that i will be able to complete within time.
+Furthermore, My Teammate Tahmid got added up with the development on Day 4. 
+He helped a lot with the UI UX, Sound, Environment Art and story development. 
+
+Finally ! The end. Thank You for reading this far ❤️
+
+
 ## Devlogs
 - Devlog - 1: [To Be Set]
