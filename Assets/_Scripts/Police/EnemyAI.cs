@@ -33,6 +33,7 @@ public class EnemyAI : MonoBehaviour
 
     public AudioSource _audioSource;
     public AudioClip clip;
+    
 
 
     private void Awake()

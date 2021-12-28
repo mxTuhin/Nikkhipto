@@ -12,7 +12,7 @@ public class ChangeLevel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("changeScene", timer);
+        StartCoroutine(changeScene(timer));
     }
 
     private void Update()
@@ -23,8 +23,9 @@ public class ChangeLevel : MonoBehaviour
         }
     }
 
-    void changeScene()
+    IEnumerator changeScene(float timer)
     {
+        yield return new WaitForSeconds(timer);
         SceneManager.LoadScene(sceneName);
     }
 }

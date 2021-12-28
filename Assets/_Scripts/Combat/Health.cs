@@ -56,6 +56,16 @@ public class Health : MonoBehaviour
                 StaticVars.showWaypointMarker = false;
             }
 
+            if (hitObject.Equals("Enemy"))
+            {
+                GameManager.instance.missionPassedText[3].SetActive(true);
+                GameManager.instance.missionFourEndTrigger = true;
+                StaticVars.inMission = false;
+                
+                StaticVars.isMissionFourComplete = true;
+                StaticVars.showWaypointMarker = false;
+            }
+
             if (hitObject.Equals("Player"))
             {
                 StartCoroutine(respawnPLayer());
@@ -128,6 +138,22 @@ public class Health : MonoBehaviour
                     healthBar.color=Color.red;
                 }
                 // gameObject.transform.LookAt(playerCharacter.transform);
+            }
+
+            if (hitObject.Equals("Enemy"))
+            {
+                // _animtor = GetComponent<Animator>();
+                // _animtor.SetTrigger("isStunned");
+                gameObject.transform.LookAt(playerCharacter.transform);
+                if (!healthBar.gameObject.activeSelf)
+                {
+                    healthBar.gameObject.SetActive(true);
+                }
+                healthBar.size -= new Vector2(0,0.256f);
+                if (healthBar.size.y <= 1.3)
+                {
+                    healthBar.color=Color.red;
+                }
             }
             
         }

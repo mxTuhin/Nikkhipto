@@ -40,5 +40,18 @@
 - Add Audio SFX like shoot, blast, walk, run - Background Environment Sound etc
 - Add Player Respawn System
 
+## Day 5 (27.12.2021)
+Deadline Closing in !! Race Against Time :3
+- Mission 4 Setup
+- Intro Cut Scene Setup
+- Menu
+- Build Map with buildings
+- Set Skybox
+- Hint Text / UI-UX
+- Fix Minor Bugs
+- Pre Alpha Release
+- Beta Release
+- Submit
+
 ## Devlogs
 - Devlog - 1: [To Be Set]

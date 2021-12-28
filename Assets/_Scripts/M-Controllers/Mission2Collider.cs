@@ -9,19 +9,20 @@ public class Mission2Collider : MonoBehaviour
         var hit = collider.GetComponent<PlayerController>();
         if (hit != null)
         {
+            CouroutineLogics();
             GameManager.instance.missionPassedText[1].SetActive(true);
             StaticVars.inMission = false;
             StaticVars.isMissionTwoComplete = true;
             StaticVars.showWaypointMarker = false;
-            StartCoroutine(deactivateMissionTwoObjects());
             Destroy(gameObject);
             
         }
     }
 
-    IEnumerator deactivateMissionTwoObjects()
+    void CouroutineLogics()
     {
-        yield return new WaitForSeconds(5f);
-        GameManager.instance.missionTwoObjects.SetActive(false);
+        GameManager.instance.initiatePhoneCall();
     }
+
+    
 }

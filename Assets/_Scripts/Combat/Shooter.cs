@@ -72,10 +72,10 @@ public class Shooter : MonoBehaviour
                         
                         takeHit.TakeDamage(damage, "Police");
                     }
-                    else if (playerObject != null)
-                    {
-                        takeHit.TakeDamage(damage, "Player");
-                    }
+                    // else if (playerObject != null)
+                    // {
+                    //     takeHit.TakeDamage(damage, "Player");
+                    // }
                     else if (pedsObject != null)
                     {
                         print("Peds");
@@ -85,6 +85,11 @@ public class Shooter : MonoBehaviour
                     if (hit.transform.gameObject.name == "LeaderOne")
                     {
                         takeHit.TakeDamage(damage, "LeaderOne");
+                    }
+
+                    if (hit.transform.gameObject.name == "Enemy")
+                    {
+                        takeHit.TakeDamage(damage, "Enemy");
                     }
                 }
             }

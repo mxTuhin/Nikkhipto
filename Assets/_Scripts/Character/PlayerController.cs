@@ -72,6 +72,8 @@ public class PlayerController : MonoBehaviour
 
     private bool canWalkSound=true;
     // public GameObject gameOver;
+
+    public bool canControl=true;
     
     
 
@@ -98,7 +100,8 @@ public class PlayerController : MonoBehaviour
     {
         if(GameManager.instance.gameOver) return;
         if(GameManager.instance.pauseMenuState) return;
-        
+        if(!GameManager.instance.canControl) return;
+
 
         if(Input.GetKey(KeyCode.Escape))
         {
