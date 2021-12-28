@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8afd232e986bd5e429cd3728eaed0506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: EntryScene
+  sceneName: PreEntryScene
   timer: 11
 --- !u!4 &775250625
 Transform:

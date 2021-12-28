@@ -7,12 +7,12 @@ public class StaticVars : MonoBehaviour
 {
     public static int missionSelector=0;
 
-    public static bool isMissionOneTriggered=true;
+    public static bool isMissionOneTriggered=false;
     public static bool isMissionTwoTriggered=false;
     public static bool isMissionThreeTriggered=false;
     public static bool isMissionFourTriggered=false;
 
-    public static bool isMissionOneComplete = true;
+    public static bool isMissionOneComplete = false;
     public static bool isMissionTwoComplete = false;
     
     public static bool isMissionThreeComplete = false;

@@ -237,7 +237,7 @@ public class GameManager : MonoBehaviour
     public IEnumerator changeScene()
     {
         yield return new WaitForSeconds(10f);
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("EntryScene");
     }
 
     public void initiatePhoneCall()

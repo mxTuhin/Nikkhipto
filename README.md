@@ -50,8 +50,17 @@ Deadline Closing in !! Race Against Time :3
 - Hint Text / UI-UX
 - Fix Minor Bugs
 - Pre Alpha Release
+- Beta Release Delayed to Day 6
+- Submit Delayed to Day 6
+
+## Day 6 (28.12.2021)
+Extended Deadline. Completed the planned work within day 5. Not much to do.
+- Minor Bug fixes
+- UI/UX fixes
+- Some tweaks on Graphics Quality
 - Beta Release
 - Submit
+- Changes in Scene/Story Control Flow
 
 ## Devlogs
 - Devlog - 1: [To Be Set]
